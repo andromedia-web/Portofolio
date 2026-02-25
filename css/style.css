@@ -73,8 +73,100 @@ body {
   font-size: 14px;
   color: #2987e5;
 }
+.biru-03 {
+  font-family: "Calibri", arial;
+  font-size: 18px;
+  color: #2987e5;
+}
 .huruf-kecil-01 {
   font-family: "PlayfairDisplay", serif;
   font-size: 13px;
   color: #FFFFFF;
+}
+
+
+/* =========================
+   PANAH KIRI - KANAN 
+   ========================= */
+
+/* Area hover sisi */
+.hover-zone {
+    position: fixed;
+    top: 0;
+    width: 75px;
+    height: 100vh;
+    z-index: 999;
+}
+
+.left-zone { left: 10px; }
+.right-zone { right: 10px; }
+
+/* Panah dasar */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) scale(0.9);
+    width: 0;
+    height: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    opacity: 0.35;
+}
+
+/* Panah kiri */
+.arrow.left {
+    left: 15px;
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+    border-right: 26px solid rgba(32, 178, 170, 0.8);
+    filter: drop-shadow(0 0 6px rgba(0, 255, 200, 0.7))
+    animation: neonBreath 2s infinite alternate;
+}
+
+/* Panah kanan */
+.arrow.right {
+    right: 15px;
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+    border-left: 26px solid rgba(32, 178, 170, 0.8);
+    filter: drop-shadow(0 0 6px rgba(0, 255, 200, 0.7))
+    animation: neonBreath 2s infinite alternate;
+}
+
+/* Saat hover sisi layar */
+.hover-zone:hover .arrow {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* 🔥 Saat hover langsung → jadi kuning terang */
+.arrow.left:hover {
+    border-right-color: #ffea00;
+    left: 30px;
+    filter: drop-shadow(0 0 12px rgba(255, 234, 0, 0.9));
+    animation: pulse 1.3s infinite;
+}
+
+.arrow.right:hover {
+    border-left-color: #ffea00;
+    right: 30px;
+    filter: drop-shadow(0 0 12px rgba(255, 234, 0, 0.9));
+    animation: pulse 1.3s infinite;
+}
+
+/* Animasi glow idle */
+@keyframes neonBreath {
+    from {
+        filter: drop-shadow(0 0 4px rgba(0, 255, 200, 0.5));
+    }
+    to {
+        filter: drop-shadow(0 0 12px rgba(0, 255, 200, 1));
+    }
+}
+
+/* Animasi pulse */
+@keyframes pulse {
+    0%   { transform: translateY(-50%) scale(1.05); }
+    50%  { transform: translateY(-50%) scale(1.30); }
+    100% { transform: translateY(-50%) scale(1.05); }
 }

@@ -8,7 +8,7 @@
 .pojok-kiri-bawah {
     position: fixed;   /* menempel ke layar */
     bottom: 0;         /* pojok bawah */
-    left: 0;           /* pojok kiri */
+    left: 10px;           /* pojok kiri */
 
     margin: 20px;      /* jarak dari tepi layar (opsional) */
 }
@@ -16,7 +16,7 @@
 .pojok-kanan-bawah {
     position: fixed;
     bottom: 0;
-    right: 0;
+    right: 100px;
     margin: 20px;
 }
 
